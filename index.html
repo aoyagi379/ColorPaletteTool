@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色パレットツール</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>色パレットツール</h1>
+        <p>好きな色を組み合わせてみましょう。</p>
+
+        <!-- パレット表示 -->
+        <div id="palette-container"></div>
+
+        <!-- 色数変更 -->
+        <div class="palette-buttons">
+            <button id="remove-color" type="button">－ 色を減らす</button>
+            <button id="add-color" type="button">＋ 色を増やす</button>
+        </div>
+
+        <!-- パレット保存 -->
+        <section class="save-section">
+            <h2>パレットを保存</h2>
+
+            <div class="save-controls">
+                <input
+                    type="text"
+                    id="palette-name"
+                    placeholder="パレットの名前"
+                    maxlength="50"
+                    aria-label="パレットの名前"
+                >
+                <button id="save-palette" type="button">
+                    保存する
+                </button>
+            </div>
+
+            <p id="save-message" role="status"></p>
+        </section>
+
+        <!-- 保存済み一覧 -->
+        <section class="saved-section">
+            <h2>保存したパレット</h2>
+            <div id="saved-palettes"></div>
+        </section>
+    </main>
+</body>
+</html>

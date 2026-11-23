@@ -1,0 +1,290 @@
+/* ========================================
+   1. ページ全体
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 16px 60px;
+    background-color: #f4f5f2;
+    color: #303936;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ========================================
+   2. 色パレット
+======================================== */
+
+#palette-container {
+    display: flex;
+    width: 100%;
+    margin-top: 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.color-block {
+    flex: 1;
+    min-width: 0;
+}
+
+.color-preview {
+    height: 200px;
+}
+
+.color-code {
+    background-color: #ffffff;
+    padding: 12px 2px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.color-control {
+    display: flex;
+    justify-content: center;
+    padding: 12px 4px;
+    background-color: #ffffff;
+}
+
+.color-picker {
+    width: 56px;
+    height: 44px;
+    padding: 3px;
+    cursor: pointer;
+    border: 1px solid #cdd5cf;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* ========================================
+   3. 色数変更ボタン
+======================================== */
+
+.palette-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.palette-buttons button {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #3f574c;
+    background-color: #ffffff;
+    border: 1px solid #cfd8d1;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.palette-buttons button:hover:not(:disabled) {
+    background-color: #e8eee9;
+}
+
+.palette-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   4. 保存セクション
+======================================== */
+
+.save-section {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #dce3dc;
+}
+
+.save-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#palette-name {
+    flex: 1;
+    min-width: 0;
+    max-width: 400px;
+    min-height: 44px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cdd5cf;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+#save-palette {
+    min-height: 44px;
+    padding: 12px 24px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #597b6b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#save-palette:hover {
+    background-color: #476858;
+}
+
+#save-message {
+    min-height: 24px;
+    margin-top: 12px;
+    color: #476858;
+}
+
+/* ========================================
+   5. 保存済みパレット
+======================================== */
+
+.saved-section {
+    margin-top: 36px;
+}
+
+#saved-palettes {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.saved-palette {
+    padding: 18px;
+    background-color: #ffffff;
+    border: 1px solid #dce3dc;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.saved-palette-name {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.saved-palette-colors {
+    display: flex;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.saved-color {
+    flex: 1;
+    min-width: 0;
+}
+
+.load-palette,
+.delete-palette {
+    min-height: 44px;
+    margin-top: 14px;
+    margin-right: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    border: 1px solid #cfd8d1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.load-palette:hover,
+.delete-palette:hover {
+    background-color: #e8eee9;
+}
+
+/* ========================================
+   6. スマートフォン対応
+======================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 24px 12px 48px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #palette-container {
+        margin-top: 24px;
+    }
+
+    .color-preview {
+        height: 150px;
+    }
+
+    .color-code {
+        font-size: 11px;
+        padding: 10px 1px;
+    }
+
+    .color-control {
+        padding: 10px 2px;
+    }
+
+    .color-picker {
+        width: 100%;
+        max-width: 50px;
+        height: 44px;
+    }
+
+    .palette-buttons {
+        gap: 8px;
+    }
+
+    .palette-buttons button {
+        flex: 1;
+        padding: 12px 6px;
+        font-size: 13px;
+    }
+
+    .save-controls {
+        flex-direction: column;
+    }
+
+    #palette-name {
+        max-width: none;
+        width: 100%;
+    }
+
+    #save-palette {
+        width: 100%;
+    }
+
+    .saved-palette {
+        padding: 14px;
+    }
+}
